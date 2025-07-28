@@ -36,8 +36,8 @@
         data_store:
           local:
             path: "{{ backup_dir }}"
-            filename: "{{ inventory_hostname }}.txt"
-              path: "{{ backup_dir }}"
+            filename: 
+              path: "{{ inventory_hostname }}.txt"
             
 
     # This task removes the Current configuration... from the top of IOS routers show run
