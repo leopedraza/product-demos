@@ -34,7 +34,9 @@
         operation: backup
         type: full
         data_store:
-          local: "{{ backup_dir }}"
+          local:
+            path: "{{ backup_dir }}"
+        
 
     # This task removes the Current configuration... from the top of IOS routers show run
     - name: Remove non config lines - regexp
