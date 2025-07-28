@@ -35,7 +35,6 @@
         type: full
         data_store:
           local:
-            filename: "{{ inventory_hostname }}.txt"
             path: "{{ backup_dir }}"
             
 
