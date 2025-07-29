@@ -44,7 +44,7 @@
     - name: Remove non config lines - regexp
       delegate_to: localhost
       ansible.builtin.lineinfile:
-        path: "{{ backup_dir }}/{{ inventory_hostname }}.txt"
+        path: "{{ backup_dir }}/{{ inventory_hostname }}_{{ timestamp}}.txt"
         line: "Building configuration..."
         state: absent
 
