@@ -43,14 +43,14 @@
     - name: Remove non config lines - regexp
       delegate_to: localhost
       ansible.builtin.lineinfile:
-        path: "{{ backup_dir }}/{{ inventory_hostname }}.txt"
+        path: "{{ backup_dir }}/{{ inventory_hostname }}_{{ ansible_date_time.date }}.txt"
         line: "Building configuration..."
         state: absent
 
     - name: Copy backup file
       delegate_to: "{{ report_server }}"
       ansible.builtin.copy:
-        src: "{{ backup_dir }}/{{ inventory_hostname }}.txt"
+        src: "{{ backup_dir }}/{{ inventory_hostname }}_{{ ansible_date_time.date }}.txt"
         dest: "/var/www/html/backups/{{ inventory_hostname }}.cfg"
         backup: true
         owner: ec2-user
