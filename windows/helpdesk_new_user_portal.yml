@@ -19,8 +19,9 @@
         password: "{{ temp_password }}"
         state: present
         groups:
-          - "GroupA"
-          - "GroupB"
+          set:
+            - "GroupA"
+            - "GroupB"
         street: "{{ street }}"
         city: "{{ city }}"
         state_province: IN
